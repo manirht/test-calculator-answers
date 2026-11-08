@@ -1,0 +1,24 @@
+{
+  "id": "07",
+  "slug": "python-pv-zero-rate",
+  "title": "pv() at a 0% rate returns a single payment",
+  "lang": "python",
+  "also_touches": [],
+  "tier": "L1",
+  "category": "finance",
+  "kind": "fix",
+  "expected": {
+    "outcome": "stop",
+    "reason": "unsupported_language_or_not_reproduced",
+    "note": "Python-only bug (reachable from Rust via calc eval)"
+  },
+  "culprit": "python/calcstats/finance.py::pv",
+  "commit_message": "refactor: simplify the zero-rate branch in pv",
+  "suites": [
+    "python"
+  ],
+  "hidden_files": [
+    "python/tests/test_hidden_07.py"
+  ],
+  "hidden_run": "cd python && python3 -m unittest discover -s tests -p test_hidden_07.py"
+}

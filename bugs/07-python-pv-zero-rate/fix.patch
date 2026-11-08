@@ -1,0 +1,13 @@
+diff --git b/python/calcstats/finance.py a/python/calcstats/finance.py
+index 867129b..54996a2 100644
+--- b/python/calcstats/finance.py
++++ a/python/calcstats/finance.py
+@@ -42,7 +42,7 @@ def pv(rate, nper, payment):
+     _check_rate(rate)
+     n = _periods(nper)
+     if rate == 0:
+-        return payment
++        return payment * n
+     return payment * (1 - (1 + rate) ** -n) / rate
+ 
+ 

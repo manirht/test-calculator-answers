@@ -1,0 +1,13 @@
+diff --git a/crates/calc-eval/src/number.rs b/crates/calc-eval/src/number.rs
+index c18f2b2..e7c1c7b 100644
+--- a/crates/calc-eval/src/number.rs
++++ b/crates/calc-eval/src/number.rs
+@@ -124,7 +124,7 @@ impl Rational {
+         let r = self.den / g;
+         let a = self.num.checked_mul(l).ok_or_else(overflow)?;
+         let b = other.num.checked_mul(r).ok_or_else(overflow)?;
+-        let n = a.checked_add(b).ok_or_else(overflow)?;
++        let n = a.wrapping_add(b);
+         let d = self.den.checked_mul(l).ok_or_else(overflow)?;
+         Rational::new(n, d)
+     }

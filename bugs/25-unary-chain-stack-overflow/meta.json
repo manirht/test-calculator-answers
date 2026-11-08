@@ -1,0 +1,22 @@
+{
+  "id": "25",
+  "slug": "unary-chain-stack-overflow",
+  "title": "calc crashes (SIGSEGV) on a very long run of minus signs",
+  "lang": "rust",
+  "also_touches": [],
+  "tier": "L6",
+  "category": "parser",
+  "kind": "fix",
+  "expected": {
+    "outcome": "fix"
+  },
+  "culprit": "crates/calc-parser/src/lib.rs::Parser::parse_expr_inner (prefix `-` branch)",
+  "commit_message": "perf: parse prefix operators without the depth bookkeeping",
+  "suites": [
+    "rust"
+  ],
+  "hidden_files": [
+    "crates/calc-eval/tests/hidden_25.rs"
+  ],
+  "hidden_run": "cargo test -p calc-eval --test hidden_25"
+}

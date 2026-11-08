@@ -1,0 +1,27 @@
+{
+  "id": "28",
+  "slug": "ts-cli-mode-ignored",
+  "title": "calc-ui --mode is ignored",
+  "lang": "ts",
+  "also_touches": [
+    "rust"
+  ],
+  "tier": "L2",
+  "category": "cli",
+  "kind": "fix",
+  "expected": {
+    "outcome": "stop",
+    "reason": "unsupported_language_or_not_reproduced",
+    "note": "TypeScript-only bug"
+  },
+  "culprit": "ts/src/cli.ts::main",
+  "commit_message": "refactor: apply CLI settings in one place",
+  "suites": [
+    "rust",
+    "ts"
+  ],
+  "hidden_files": [
+    "ts/src/test/hidden_28.test.ts"
+  ],
+  "hidden_run": "cd ts && npm run build && node --test dist/test/hidden_28.test.js"
+}

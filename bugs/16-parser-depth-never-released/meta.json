@@ -1,0 +1,22 @@
+{
+  "id": "16",
+  "slug": "parser-depth-never-released",
+  "title": "A long sum fails with TOO_DEEP",
+  "lang": "rust",
+  "also_touches": [],
+  "tier": "L3",
+  "category": "parser",
+  "kind": "fix",
+  "expected": {
+    "outcome": "fix"
+  },
+  "culprit": "crates/calc-parser/src/lib.rs::Parser::parse_expr",
+  "commit_message": "refactor: return the inner parse result directly",
+  "suites": [
+    "rust"
+  ],
+  "hidden_files": [
+    "crates/calc-eval/tests/hidden_16.rs"
+  ],
+  "hidden_run": "cargo test -p calc-eval --test hidden_16"
+}

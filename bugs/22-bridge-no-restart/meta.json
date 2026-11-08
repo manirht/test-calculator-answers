@@ -1,0 +1,24 @@
+{
+  "id": "22",
+  "slug": "bridge-no-restart",
+  "title": "After the Python helper dies, every statistics call fails until calc is restarted",
+  "lang": "rust",
+  "also_touches": [
+    "python"
+  ],
+  "tier": "L4",
+  "category": "python-bridge",
+  "kind": "fix",
+  "expected": {
+    "outcome": "fix"
+  },
+  "culprit": "crates/calc-eval/src/bridge.rs::PythonBridge::call",
+  "commit_message": "refactor: simplify error handling in PythonBridge::call",
+  "suites": [
+    "rust"
+  ],
+  "hidden_files": [
+    "crates/calc-eval/tests/hidden_22.rs"
+  ],
+  "hidden_run": "cargo test -p calc-eval --test hidden_22"
+}

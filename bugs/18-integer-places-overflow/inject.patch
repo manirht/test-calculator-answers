@@ -1,0 +1,14 @@
+diff --git a/crates/calc-eval/src/number.rs b/crates/calc-eval/src/number.rs
+index c18f2b2..332c1db 100644
+--- a/crates/calc-eval/src/number.rs
++++ b/crates/calc-eval/src/number.rs
+@@ -254,9 +254,6 @@ impl Rational {
+ 
+     /// Decimal text with at most `places` fractional digits and no trailing zeros.
+     pub fn to_decimal(&self, places: u32, mode: RoundMode) -> Result<String, EvalError> {
+-        if self.is_integer() {
+-            return Ok(self.num.to_string());
+-        }
+         let units = self.round_units(places, mode)?;
+         let scale = pow10(places)?;
+         let magnitude = units.abs();

@@ -1,0 +1,27 @@
+{
+  "id": "26",
+  "slug": "ts-cli-no-history",
+  "title": "--no-history still writes the history file",
+  "lang": "ts",
+  "also_touches": [
+    "rust"
+  ],
+  "tier": "L2",
+  "category": "cli",
+  "kind": "fix",
+  "expected": {
+    "outcome": "stop",
+    "reason": "unsupported_language_or_not_reproduced",
+    "note": "TypeScript-only bug"
+  },
+  "culprit": "ts/src/cli.ts::main",
+  "commit_message": "refactor: always flush history when the session ends",
+  "suites": [
+    "rust",
+    "ts"
+  ],
+  "hidden_files": [
+    "ts/src/test/hidden_26.test.ts"
+  ],
+  "hidden_run": "cd ts && npm run build && node --test dist/test/hidden_26.test.js"
+}

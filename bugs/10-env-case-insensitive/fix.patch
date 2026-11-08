@@ -1,0 +1,22 @@
+diff --git b/crates/calc-eval/src/env.rs a/crates/calc-eval/src/env.rs
+index e8214c0..9d211df 100644
+--- b/crates/calc-eval/src/env.rs
++++ a/crates/calc-eval/src/env.rs
+@@ -33,7 +33,7 @@ impl Env {
+             "pi" => Ok(pi()),
+             "e" => Ok(euler()),
+             _ => {
+-                self.vars.get(&name.to_lowercase()).copied().ok_or_else(|| {
++                self.vars.get(name).copied().ok_or_else(|| {
+                     EvalError::new(ErrorCode::UnknownVar, format!("unknown variable '{name}'"))
+                 })
+             }
+@@ -47,7 +47,7 @@ impl Env {
+                 format!("'{name}' is reserved and cannot be assigned"),
+             ));
+         }
+-        self.vars.insert(name.to_lowercase(), value);
++        self.vars.insert(name.to_string(), value);
+         Ok(())
+     }
+ 

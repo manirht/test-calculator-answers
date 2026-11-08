@@ -1,0 +1,13 @@
+diff --git b/python/calcstats/stats.py a/python/calcstats/stats.py
+index 8f01ffc..aa018c7 100644
+--- b/python/calcstats/stats.py
++++ a/python/calcstats/stats.py
+@@ -45,7 +45,7 @@ def median(*values):
+ 
+ def mode(*values):
+     _need(values, 1, "mode")
+-    counts = Counter(float(v) for v in values)
++    counts = Counter(values)
+     best = max(counts.values())
+     return min(v for v, c in counts.items() if c == best)
+ 

@@ -1,0 +1,13 @@
+diff --git b/python/calcstats/finance.py a/python/calcstats/finance.py
+index 632eddc..54996a2 100644
+--- b/python/calcstats/finance.py
++++ a/python/calcstats/finance.py
+@@ -13,7 +13,7 @@ def _periods(n, name="nper"):
+ 
+ 
+ def _check_rate(rate):
+-    if rate < -1:
++    if rate <= -1:
+         raise CalcError("DOMAIN", "rate must be greater than -1")
+ 
+ 

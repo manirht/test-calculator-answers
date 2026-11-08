@@ -1,0 +1,13 @@
+diff --git b/crates/calc-parser/src/lib.rs a/crates/calc-parser/src/lib.rs
+index 8f49bfc..7a937bc 100644
+--- b/crates/calc-parser/src/lib.rs
++++ a/crates/calc-parser/src/lib.rs
+@@ -276,7 +276,7 @@ impl Parser {
+                 }
+             }
+             TokenKind::Minus => {
+-                let inner = self.parse_expr_inner(PREFIX_BP)?;
++                let inner = self.parse_expr(PREFIX_BP)?;
+                 Expr::Unary {
+                     op: UnOp::Neg,
+                     expr: Box::new(inner),

@@ -1,0 +1,22 @@
+{
+  "id": "03",
+  "slug": "constant-e-digits",
+  "title": "The constant e is wrong after the 13th decimal place",
+  "lang": "rust",
+  "also_touches": [],
+  "tier": "L1",
+  "category": "constants",
+  "kind": "fix",
+  "expected": {
+    "outcome": "fix"
+  },
+  "culprit": "crates/calc-eval/src/env.rs::euler",
+  "commit_message": "chore: update built-in constants",
+  "suites": [
+    "rust"
+  ],
+  "hidden_files": [
+    "crates/calc-eval/tests/hidden_03.rs"
+  ],
+  "hidden_run": "cargo test -p calc-eval --test hidden_03"
+}

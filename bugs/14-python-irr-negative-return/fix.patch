@@ -1,0 +1,13 @@
+diff --git b/python/calcstats/finance.py a/python/calcstats/finance.py
+index fa995ea..54996a2 100644
+--- b/python/calcstats/finance.py
++++ a/python/calcstats/finance.py
+@@ -65,7 +65,7 @@ def irr(*cashflows):
+         def value(rate):
+             return sum(cf / (1 + rate) ** i for i, cf in enumerate(flows))
+ 
+-        low, high = Decimal("0"), Decimal(10)
++        low, high = Decimal("-0.99"), Decimal(10)
+         if value(low) * value(high) > 0:
+             raise CalcError("DOMAIN", "irr did not converge")
+         for _ in range(200):

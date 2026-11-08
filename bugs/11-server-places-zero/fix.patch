@@ -1,0 +1,13 @@
+diff --git b/crates/calc-cli/src/server.rs a/crates/calc-cli/src/server.rs
+index c75f1f6..6758e61 100644
+--- b/crates/calc-cli/src/server.rs
++++ a/crates/calc-cli/src/server.rs
+@@ -19,7 +19,7 @@ fn error_reply(id: &Value, code: &str, message: &str, pos: Option<usize>) -> Val
+ fn options_for(calculator: &Calculator, request: &Value) -> Result<FormatOptions, String> {
+     let mut places = calculator.options.places;
+     let mut mode = calculator.options.mode;
+-    if let Some(value) = request.get("places").filter(|v| v.as_u64() != Some(0)) {
++    if let Some(value) = request.get("places") {
+         places = value
+             .as_u64()
+             .and_then(|p| u32::try_from(p).ok())

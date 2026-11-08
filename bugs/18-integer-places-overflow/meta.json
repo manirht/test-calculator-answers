@@ -1,0 +1,22 @@
+{
+  "id": "18",
+  "slug": "integer-places-overflow",
+  "title": "Whole numbers fail with OVERFLOW when many decimal places are requested",
+  "lang": "rust",
+  "also_touches": [],
+  "tier": "L3",
+  "category": "formatting",
+  "kind": "fix",
+  "expected": {
+    "outcome": "fix"
+  },
+  "culprit": "crates/calc-eval/src/number.rs::Rational::to_decimal",
+  "commit_message": "refactor: remove special case for integers in to_decimal",
+  "suites": [
+    "rust"
+  ],
+  "hidden_files": [
+    "crates/calc-eval/tests/hidden_18.rs"
+  ],
+  "hidden_run": "cargo test -p calc-eval --test hidden_18"
+}

@@ -1,0 +1,13 @@
+diff --git b/ts/src/cli.ts a/ts/src/cli.ts
+index 7e35d20..e008d50 100644
+--- b/ts/src/cli.ts
++++ a/ts/src/cli.ts
+@@ -57,7 +57,7 @@ async function main(argv: string[]): Promise<number> {
+       rl.prompt();
+     }
+     rl.close();
+-    saveHistory(historyFile, history);
++    if (!args.noHistory) saveHistory(historyFile, history);
+     return 0;
+   } finally {
+     client.close();

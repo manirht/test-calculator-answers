@@ -1,0 +1,13 @@
+diff --git b/crates/calc-lexer/src/lib.rs a/crates/calc-lexer/src/lib.rs
+index aec59a9..713458d 100644
+--- b/crates/calc-lexer/src/lib.rs
++++ a/crates/calc-lexer/src/lib.rs
+@@ -68,7 +68,7 @@ pub fn tokenize(input: &str) -> Result<Vec<Token>, LexError> {
+     while i < bytes.len() {
+         let b = bytes[i];
+         let simple = match b {
+-            b' ' | b'\t' => {
++            b' ' | b'\t' | b'\n' | b'\r' => {
+                 i += 1;
+                 continue;
+             }

@@ -1,0 +1,22 @@
+{
+  "id": "08",
+  "slug": "parser-mod-precedence",
+  "title": "% has the wrong precedence: 2 + 7 % 4 gives 1",
+  "lang": "rust",
+  "also_touches": [],
+  "tier": "L2",
+  "category": "parser",
+  "kind": "fix",
+  "expected": {
+    "outcome": "fix"
+  },
+  "culprit": "crates/calc-parser/src/lib.rs::Parser::parse_expr_inner (infix table)",
+  "commit_message": "refactor: share binding powers between operators in the parser",
+  "suites": [
+    "rust"
+  ],
+  "hidden_files": [
+    "crates/calc-eval/tests/hidden_08.rs"
+  ],
+  "hidden_run": "cargo test -p calc-eval --test hidden_08"
+}

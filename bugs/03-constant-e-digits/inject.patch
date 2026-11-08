@@ -1,0 +1,13 @@
+diff --git a/crates/calc-eval/src/env.rs b/crates/calc-eval/src/env.rs
+index 9d211df..69fb16b 100644
+--- a/crates/calc-eval/src/env.rs
++++ b/crates/calc-eval/src/env.rs
+@@ -11,7 +11,7 @@ fn pi() -> Rational {
+ }
+ 
+ fn euler() -> Rational {
+-    Rational::new(271_828_182_845_905, 100_000_000_000_000).expect("constant")
++    Rational::new(271_828_182_845_950, 100_000_000_000_000).expect("constant")
+ }
+ 
+ #[derive(Debug, Default, Clone)]

@@ -1,0 +1,20 @@
+{
+  "id": "31",
+  "slug": "neg-caret-is-power",
+  "title": "2^3 is wrong: it should be 1 (XOR), not 8",
+  "lang": "none",
+  "also_touches": [],
+  "tier": "N",
+  "category": "negative-control",
+  "kind": "stop",
+  "expected": {
+    "outcome": "stopped",
+    "reason": "not_reproduced",
+    "note": "Not a bug: `^` is exponentiation by design (README, parser tests). Changing it would break documented behaviour."
+  },
+  "culprit": "none (works as designed)",
+  "commit_message": "n/a",
+  "suites": [],
+  "hidden_files": [],
+  "hidden_run": ""
+}

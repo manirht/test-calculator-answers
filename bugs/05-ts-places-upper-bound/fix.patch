@@ -1,0 +1,20 @@
+diff --git b/ts/src/args.ts a/ts/src/args.ts
+index a0f30a5..6c6636a 100644
+--- b/ts/src/args.ts
++++ a/ts/src/args.ts
+@@ -10,6 +10,7 @@ export interface Args {
+ }
+ 
+ export const DEFAULT_BIN = "calc";
++const MAX_PLACES = 30;
+ 
+ export function parseArgs(argv: string[], env: Record<string, string | undefined> = {}): Args {
+   const args: Args = { bin: env.CALC_BIN ?? DEFAULT_BIN, noHistory: false, help: false };
+@@ -42,6 +43,7 @@ export function parseArgs(argv: string[], env: Record<string, string | undefined
+         if (v === undefined || !Number.isInteger(places) || places < 0) {
+           return { ...args, error: "--places needs a non-negative integer" };
+         }
++        if (places > MAX_PLACES) return { ...args, error: `--places must be at most ${MAX_PLACES}` };
+         args.places = places;
+         break;
+       }

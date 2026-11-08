@@ -1,0 +1,15 @@
+diff --git b/crates/calc-parser/src/lib.rs a/crates/calc-parser/src/lib.rs
+index 22c3c02..7a937bc 100644
+--- b/crates/calc-parser/src/lib.rs
++++ a/crates/calc-parser/src/lib.rs
+@@ -257,7 +257,9 @@ impl Parser {
+         if self.depth > MAX_DEPTH {
+             return Err(ParseError::TooDeep);
+         }
+-        self.parse_expr_inner(min_bp)
++        let result = self.parse_expr_inner(min_bp);
++        self.depth -= 1;
++        result
+     }
+ 
+     fn parse_expr_inner(&mut self, min_bp: u8) -> Result<Expr, ParseError> {

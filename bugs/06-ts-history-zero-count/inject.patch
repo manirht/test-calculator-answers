@@ -1,0 +1,13 @@
+diff --git a/ts/src/commands.ts b/ts/src/commands.ts
+index d623c1e..85ccab2 100644
+--- a/ts/src/commands.ts
++++ b/ts/src/commands.ts
+@@ -31,7 +31,7 @@ export function parseCommand(line: string): Command | null {
+     case "history": {
+       if (arg === undefined) return { kind: "history" };
+       const count = Number(arg);
+-      if (!Number.isInteger(count) || count < 1) return { kind: "error", message: "usage: :history [count]" };
++      if (!Number.isInteger(count) || count < 0) return { kind: "error", message: "usage: :history [count]" };
+       return { kind: "history", count };
+     }
+     case "places": {

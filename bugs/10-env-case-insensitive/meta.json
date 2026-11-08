@@ -1,0 +1,22 @@
+{
+  "id": "10",
+  "slug": "env-case-insensitive",
+  "title": "Variable names are not case-sensitive",
+  "lang": "rust",
+  "also_touches": [],
+  "tier": "L2",
+  "category": "variables",
+  "kind": "fix",
+  "expected": {
+    "outcome": "fix"
+  },
+  "culprit": "crates/calc-eval/src/env.rs::Env::{get,set}",
+  "commit_message": "refactor: normalize variable names in Env",
+  "suites": [
+    "rust"
+  ],
+  "hidden_files": [
+    "crates/calc-eval/tests/hidden_10.rs"
+  ],
+  "hidden_run": "cargo test -p calc-eval --test hidden_10"
+}

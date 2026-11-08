@@ -1,0 +1,14 @@
+diff --git b/crates/calc-eval/src/lib.rs a/crates/calc-eval/src/lib.rs
+index 2dce71d..daefec4 100644
+--- b/crates/calc-eval/src/lib.rs
++++ a/crates/calc-eval/src/lib.rs
+@@ -49,8 +49,8 @@ impl Calculator {
+     pub fn eval_line_with(&mut self, input: &str, options: FormatOptions) -> Result<Evaluation, EvalError> {
+         let expr = calc_parser::parse(input)?;
+         let value = eval::eval(&expr, &mut self.env, self.bridge.as_mut())?;
+-        self.env.set_ans(value);
+         let text = format::format_value(&value, &options)?;
++        self.env.set_ans(value);
+         Ok(Evaluation {
+             value,
+             text,

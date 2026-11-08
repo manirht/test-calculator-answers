@@ -1,0 +1,16 @@
+diff --git b/crates/calc-eval/src/bridge.rs a/crates/calc-eval/src/bridge.rs
+index fbf9c79..89c7f21 100644
+--- b/crates/calc-eval/src/bridge.rs
++++ a/crates/calc-eval/src/bridge.rs
+@@ -148,10 +148,7 @@ impl Bridge for PythonBridge {
+     fn call(&mut self, name: &str, args: &[Rational]) -> Result<Rational, EvalError> {
+         let id = self.next_id;
+         self.next_id += 1;
+-        let wire_args: Vec<String> = args
+-            .iter()
+-            .map(|a| (a.num() as f64 / a.den() as f64).to_string())
+-            .collect();
++        let wire_args: Vec<String> = args.iter().map(|a| a.to_string()).collect();
+         let request = json!({ "id": id, "fn": name, "args": wire_args });
+         let reply = match self.roundtrip(&request) {
+             Ok(reply) => reply,

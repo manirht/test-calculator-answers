@@ -1,0 +1,24 @@
+{
+  "id": "14",
+  "slug": "python-irr-negative-return",
+  "title": "irr() says it did not converge for an investment that loses money",
+  "lang": "python",
+  "also_touches": [],
+  "tier": "L3",
+  "category": "finance",
+  "kind": "fix",
+  "expected": {
+    "outcome": "stop",
+    "reason": "unsupported_language_or_not_reproduced",
+    "note": "Python-only bug"
+  },
+  "culprit": "python/calcstats/finance.py::irr",
+  "commit_message": "refactor: narrow the irr search interval",
+  "suites": [
+    "python"
+  ],
+  "hidden_files": [
+    "python/tests/test_hidden_14.py"
+  ],
+  "hidden_run": "cd python && python3 -m unittest discover -s tests -p test_hidden_14.py"
+}

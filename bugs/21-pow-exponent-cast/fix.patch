@@ -1,0 +1,14 @@
+diff --git b/crates/calc-eval/src/eval.rs a/crates/calc-eval/src/eval.rs
+index 8f6af5c..e95b7ce 100644
+--- b/crates/calc-eval/src/eval.rs
++++ a/crates/calc-eval/src/eval.rs
+@@ -68,7 +68,8 @@ fn apply_binary(op: BinOp, left: Rational, right: Rational) -> Result<Rational,
+                     "fractional exponents are not supported; use sqrt()",
+                 ));
+             }
+-            let exp = right.num() as i32;
++            let exp = i32::try_from(right.num())
++                .map_err(|_| EvalError::new(ErrorCode::Overflow, "exponent is too large"))?;
+             left.pow_int(exp)
+         }
+     }

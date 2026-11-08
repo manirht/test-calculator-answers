@@ -1,0 +1,13 @@
+diff --git a/ts/src/cli.ts b/ts/src/cli.ts
+index e008d50..0fae9d3 100644
+--- a/ts/src/cli.ts
++++ b/ts/src/cli.ts
+@@ -31,7 +31,7 @@ async function main(argv: string[]): Promise<number> {
+     if (args.expr !== undefined) {
+       const output = await repl.handleLine(args.expr);
+       (output.error ? console.error : console.log)(output.text);
+-      return output.error ? 1 : 0;
++      return 0;
+     }
+ 
+     let names: string[] = [];

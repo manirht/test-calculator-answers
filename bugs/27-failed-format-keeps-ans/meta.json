@@ -1,0 +1,22 @@
+{
+  "id": "27",
+  "slug": "failed-format-keeps-ans",
+  "title": "A line that fails with OVERFLOW still replaces ans",
+  "lang": "rust",
+  "also_touches": [],
+  "tier": "L3",
+  "category": "session-state",
+  "kind": "fix",
+  "expected": {
+    "outcome": "fix"
+  },
+  "culprit": "crates/calc-eval/src/lib.rs::Calculator::eval_line_with",
+  "commit_message": "refactor: update ans as soon as a value is computed",
+  "suites": [
+    "rust"
+  ],
+  "hidden_files": [
+    "crates/calc-eval/tests/hidden_27.rs"
+  ],
+  "hidden_run": "cargo test -p calc-eval --test hidden_27"
+}

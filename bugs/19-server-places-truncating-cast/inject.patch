@@ -1,0 +1,13 @@
+diff --git a/crates/calc-cli/src/server.rs b/crates/calc-cli/src/server.rs
+index 6758e61..1c89604 100644
+--- a/crates/calc-cli/src/server.rs
++++ b/crates/calc-cli/src/server.rs
+@@ -22,7 +22,7 @@ fn options_for(calculator: &Calculator, request: &Value) -> Result<FormatOptions
+     if let Some(value) = request.get("places") {
+         places = value
+             .as_u64()
+-            .and_then(|p| u32::try_from(p).ok())
++            .map(|p| p as u32)
+             .ok_or_else(|| "places must be a non-negative integer".to_string())?;
+     }
+     if let Some(value) = request.get("mode") {

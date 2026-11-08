@@ -1,0 +1,22 @@
+{
+  "id": "01",
+  "slug": "lexer-crlf-whitespace",
+  "title": "Multi-line expressions fail with \"unexpected character\"",
+  "lang": "rust",
+  "also_touches": [],
+  "tier": "L1",
+  "category": "lexer",
+  "kind": "fix",
+  "expected": {
+    "outcome": "fix"
+  },
+  "culprit": "crates/calc-lexer/src/lib.rs::tokenize",
+  "commit_message": "refactor: simplify whitespace handling in the lexer",
+  "suites": [
+    "rust"
+  ],
+  "hidden_files": [
+    "crates/calc-lexer/tests/hidden_01.rs"
+  ],
+  "hidden_run": "cargo test -p calc-lexer --test hidden_01"
+}

@@ -1,0 +1,12 @@
+diff --git b/crates/calc-eval/src/bridge.rs a/crates/calc-eval/src/bridge.rs
+index 7f01db5..89c7f21 100644
+--- b/crates/calc-eval/src/bridge.rs
++++ a/crates/calc-eval/src/bridge.rs
+@@ -17,6 +17,7 @@ pub const EXTERNAL_FUNCS: &[&str] = &[
+     "mode",
+     "variance",
+     "stddev",
++    "pvariance",
+     "pstddev",
+     "percentile",
+     "pmt",

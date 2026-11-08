@@ -1,0 +1,27 @@
+{
+  "id": "12",
+  "slug": "ts-cli-exit-code",
+  "title": "calc-ui exits with status 0 when the expression fails",
+  "lang": "ts",
+  "also_touches": [
+    "rust"
+  ],
+  "tier": "L2",
+  "category": "cli",
+  "kind": "fix",
+  "expected": {
+    "outcome": "stop",
+    "reason": "unsupported_language_or_not_reproduced",
+    "note": "TypeScript-only bug"
+  },
+  "culprit": "ts/src/cli.ts::main (one-shot branch)",
+  "commit_message": "refactor: simplify one-shot exit handling in the CLI",
+  "suites": [
+    "rust",
+    "ts"
+  ],
+  "hidden_files": [
+    "ts/src/test/hidden_12.test.ts"
+  ],
+  "hidden_run": "cd ts && npm run build && node --test dist/test/hidden_12.test.js"
+}

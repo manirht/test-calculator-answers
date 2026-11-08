@@ -1,0 +1,25 @@
+{
+  "id": "11",
+  "slug": "server-places-zero",
+  "title": ":places 0 has no effect in the REPL",
+  "lang": "rust",
+  "also_touches": [
+    "ts"
+  ],
+  "tier": "L3",
+  "category": "server-protocol",
+  "kind": "fix",
+  "expected": {
+    "outcome": "fix"
+  },
+  "culprit": "crates/calc-cli/src/server.rs::options_for",
+  "commit_message": "refactor: only apply places overrides that are set",
+  "suites": [
+    "rust",
+    "ts"
+  ],
+  "hidden_files": [
+    "crates/calc-cli/tests/hidden_11.rs"
+  ],
+  "hidden_run": "cargo test -p calc-cli --test hidden_11"
+}

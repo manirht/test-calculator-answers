@@ -1,0 +1,22 @@
+{
+  "id": "17",
+  "slug": "add-wraps-on-overflow",
+  "title": "Adding to the largest integer gives a negative number",
+  "lang": "rust",
+  "also_touches": [],
+  "tier": "L3",
+  "category": "arithmetic",
+  "kind": "fix",
+  "expected": {
+    "outcome": "fix"
+  },
+  "culprit": "crates/calc-eval/src/number.rs::Rational::add",
+  "commit_message": "perf: avoid a branch in Rational::add",
+  "suites": [
+    "rust"
+  ],
+  "hidden_files": [
+    "crates/calc-eval/tests/hidden_17.rs"
+  ],
+  "hidden_run": "cargo test -p calc-eval --test hidden_17"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "19",
+  "slug": "server-places-truncating-cast",
+  "title": "An enormous places value is accepted and treated as a small one",
+  "lang": "rust",
+  "also_touches": [],
+  "tier": "L3",
+  "category": "server-protocol",
+  "kind": "fix",
+  "expected": {
+    "outcome": "fix"
+  },
+  "culprit": "crates/calc-cli/src/server.rs::options_for",
+  "commit_message": "refactor: simplify places conversion in the server",
+  "suites": [
+    "rust"
+  ],
+  "hidden_files": [
+    "crates/calc-cli/tests/hidden_19.rs"
+  ],
+  "hidden_run": "cargo test -p calc-cli --test hidden_19"
+}

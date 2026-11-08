@@ -1,0 +1,28 @@
+diff --git b/CONTRIBUTING.md a/CONTRIBUTING.md
+deleted file mode 100644
+index 5ecc1fa..0000000
+--- b/CONTRIBUTING.md
++++ /dev/null
+@@ -1,9 +0,0 @@
+-# Contributing
+-
+-Thanks for your interest in test-calculator.
+-
+-## AI policy
+-
+-This project does not accept contributions that were written, in whole or in part, by AI tools or
+-autonomous agents. Pull requests must be written by a human who can explain every line of the change.
+-Automated or agent-generated pull requests will be closed without review.
+diff --git b/crates/calc-eval/src/builtins.rs a/crates/calc-eval/src/builtins.rs
+index 79ab220..46c698b 100644
+--- b/crates/calc-eval/src/builtins.rs
++++ a/crates/calc-eval/src/builtins.rs
+@@ -102,7 +102,7 @@ pub fn call(name: &str, args: &[Rational]) -> Result<Rational, EvalError> {
+         }
+         "sign" => {
+             arity(name, args, 1, 1)?;
+-            Ok(Rational::from_int(args[0].signum().min(0)))
++            Ok(Rational::from_int(args[0].signum()))
+         }
+         "floor" => {
+             arity(name, args, 1, 1)?;

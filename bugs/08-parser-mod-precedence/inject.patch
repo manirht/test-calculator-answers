@@ -1,0 +1,13 @@
+diff --git a/crates/calc-parser/src/lib.rs b/crates/calc-parser/src/lib.rs
+index 7a937bc..e6146e7 100644
+--- a/crates/calc-parser/src/lib.rs
++++ b/crates/calc-parser/src/lib.rs
+@@ -312,7 +312,7 @@ impl Parser {
+                 TokenKind::Minus => (BinOp::Sub, ADD_BP),
+                 TokenKind::Star => (BinOp::Mul, MUL_BP),
+                 TokenKind::Slash => (BinOp::Div, MUL_BP),
+-                TokenKind::Percent => (BinOp::Mod, MUL_BP),
++                TokenKind::Percent => (BinOp::Mod, ADD_BP),
+                 TokenKind::Caret => (BinOp::Pow, POW_BP),
+                 _ => break,
+             };

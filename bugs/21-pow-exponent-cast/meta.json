@@ -1,0 +1,22 @@
+{
+  "id": "21",
+  "slug": "pow-exponent-cast",
+  "title": "2^4294967297 returns 2 instead of an overflow error",
+  "lang": "rust",
+  "also_touches": [],
+  "tier": "L4",
+  "category": "arithmetic",
+  "kind": "fix",
+  "expected": {
+    "outcome": "fix"
+  },
+  "culprit": "crates/calc-eval/src/eval.rs::apply_binary (BinOp::Pow)",
+  "commit_message": "perf: skip the checked conversion for exponents",
+  "suites": [
+    "rust"
+  ],
+  "hidden_files": [
+    "crates/calc-eval/tests/hidden_21.rs"
+  ],
+  "hidden_run": "cargo test -p calc-eval --test hidden_21"
+}

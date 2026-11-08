@@ -1,0 +1,13 @@
+diff --git a/crates/calc-eval/src/builtins.rs b/crates/calc-eval/src/builtins.rs
+index 46c698b..5a7e3d5 100644
+--- a/crates/calc-eval/src/builtins.rs
++++ b/crates/calc-eval/src/builtins.rs
+@@ -160,7 +160,7 @@ pub fn call(name: &str, args: &[Rational]) -> Result<Rational, EvalError> {
+             let g = gcd_i(a, b);
+             (a / g)
+                 .checked_mul(b)
+-                .map(|v| Rational::from_int(v.abs()))
++                .map(Rational::from_int)
+                 .ok_or_else(|| EvalError::new(ErrorCode::Overflow, "arithmetic overflow"))
+         }
+         _ => Err(EvalError::new(

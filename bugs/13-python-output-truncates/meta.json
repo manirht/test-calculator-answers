@@ -1,0 +1,26 @@
+{
+  "id": "13",
+  "slug": "python-output-truncates",
+  "title": "pmt() is off by one in the 12th decimal place",
+  "lang": "python",
+  "also_touches": [
+    "rust"
+  ],
+  "tier": "L3",
+  "category": "finance",
+  "kind": "fix",
+  "expected": {
+    "outcome": "stop",
+    "reason": "unsupported_language_or_not_reproduced",
+    "note": "root cause in Python"
+  },
+  "culprit": "python/calcstats/protocol.py::format_number",
+  "commit_message": "refactor: use integer conversion when bounding result precision",
+  "suites": [
+    "python"
+  ],
+  "hidden_files": [
+    "python/tests/test_hidden_13.py"
+  ],
+  "hidden_run": "cd python && python3 -m unittest discover -s tests -p test_hidden_13.py"
+}

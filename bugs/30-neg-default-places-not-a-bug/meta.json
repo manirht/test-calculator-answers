@@ -1,0 +1,20 @@
+{
+  "id": "30",
+  "slug": "neg-default-places-not-a-bug",
+  "title": "Floating point precision loss: 1/3 prints only 10 digits",
+  "lang": "none",
+  "also_touches": [],
+  "tier": "N",
+  "category": "negative-control",
+  "kind": "stop",
+  "expected": {
+    "outcome": "stopped",
+    "reason": "not_reproduced",
+    "note": "Not a bug: the engine is exact (rationals); 10 decimal places is the documented default display setting."
+  },
+  "culprit": "none (works as designed)",
+  "commit_message": "n/a",
+  "suites": [],
+  "hidden_files": [],
+  "hidden_run": ""
+}

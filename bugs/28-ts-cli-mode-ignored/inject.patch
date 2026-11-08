@@ -1,0 +1,12 @@
+diff --git a/ts/src/cli.ts b/ts/src/cli.ts
+index e008d50..990efb1 100644
+--- a/ts/src/cli.ts
++++ b/ts/src/cli.ts
+@@ -24,7 +24,6 @@ async function main(argv: string[]): Promise<number> {
+   const history = args.noHistory || args.expr !== undefined ? new History() : loadHistory(historyFile);
+   const settings = { ...DEFAULT_SETTINGS };
+   if (args.places !== undefined) settings.places = args.places;
+-  if (args.mode !== undefined) settings.mode = args.mode;
+   const repl = new Repl(client, history, settings);
+ 
+   try {

@@ -1,0 +1,24 @@
+{
+  "id": "05",
+  "slug": "ts-places-upper-bound",
+  "title": "A too-large --places is accepted, then every expression fails",
+  "lang": "ts",
+  "also_touches": [],
+  "tier": "L1",
+  "category": "cli-args",
+  "kind": "fix",
+  "expected": {
+    "outcome": "stop",
+    "reason": "unsupported_language_or_not_reproduced",
+    "note": "TypeScript-only bug"
+  },
+  "culprit": "ts/src/args.ts::parseArgs (--places case)",
+  "commit_message": "refactor: drop duplicated places limit from argument parsing",
+  "suites": [
+    "ts"
+  ],
+  "hidden_files": [
+    "ts/src/test/hidden_05.test.ts"
+  ],
+  "hidden_run": "cd ts && npm run build && node --test dist/test/hidden_05.test.js"
+}

@@ -1,0 +1,13 @@
+diff --git a/python/calcstats/protocol.py b/python/calcstats/protocol.py
+index 392efbc..9fca998 100644
+--- a/python/calcstats/protocol.py
++++ b/python/calcstats/protocol.py
+@@ -35,7 +35,7 @@ def parse_number(text):
+ def format_number(value):
+     value = Fraction(value)
+     if value.denominator > MAX_DENOMINATOR:
+-        value = Fraction(round(value * OUTPUT_SCALE), OUTPUT_SCALE)
++        value = Fraction(int(value * OUTPUT_SCALE), OUTPUT_SCALE)
+     return str(value)
+ 
+ 

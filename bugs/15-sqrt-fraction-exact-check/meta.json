@@ -1,0 +1,22 @@
+{
+  "id": "15",
+  "slug": "sqrt-fraction-exact-check",
+  "title": "sqrt(1/2) returns 1",
+  "lang": "rust",
+  "also_touches": [],
+  "tier": "L3",
+  "category": "builtins",
+  "kind": "fix",
+  "expected": {
+    "outcome": "fix"
+  },
+  "culprit": "crates/calc-eval/src/builtins.rs::sqrt",
+  "commit_message": "refactor: simplify the perfect-square check in sqrt",
+  "suites": [
+    "rust"
+  ],
+  "hidden_files": [
+    "crates/calc-eval/tests/hidden_15.rs"
+  ],
+  "hidden_run": "cargo test -p calc-eval --test hidden_15"
+}

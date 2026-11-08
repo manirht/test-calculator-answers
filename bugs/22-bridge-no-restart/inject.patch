@@ -1,0 +1,16 @@
+diff --git a/crates/calc-eval/src/bridge.rs b/crates/calc-eval/src/bridge.rs
+index 89c7f21..a1bb57e 100644
+--- a/crates/calc-eval/src/bridge.rs
++++ b/crates/calc-eval/src/bridge.rs
+@@ -152,10 +152,7 @@ impl Bridge for PythonBridge {
+         let request = json!({ "id": id, "fn": name, "args": wire_args });
+         let reply = match self.roundtrip(&request) {
+             Ok(reply) => reply,
+-            Err(e) => {
+-                self.session = None;
+-                return Err(e);
+-            }
++            Err(e) => return Err(e),
+         };
+         if reply["id"] != json!(id) {
+             self.session = None;

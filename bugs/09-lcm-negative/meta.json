@@ -1,0 +1,22 @@
+{
+  "id": "09",
+  "slug": "lcm-negative",
+  "title": "lcm() returns a negative number when an argument is negative",
+  "lang": "rust",
+  "also_touches": [],
+  "tier": "L2",
+  "category": "builtins",
+  "kind": "fix",
+  "expected": {
+    "outcome": "fix"
+  },
+  "culprit": "crates/calc-eval/src/builtins.rs::call (\"lcm\" arm)",
+  "commit_message": "refactor: use a method reference in lcm",
+  "suites": [
+    "rust"
+  ],
+  "hidden_files": [
+    "crates/calc-eval/tests/hidden_09.rs"
+  ],
+  "hidden_run": "cargo test -p calc-eval --test hidden_09"
+}

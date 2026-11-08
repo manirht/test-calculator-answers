@@ -1,0 +1,24 @@
+{
+  "id": "29",
+  "slug": "registry-missing-function",
+  "title": "pvariance() is reported as an unknown function",
+  "lang": "rust",
+  "also_touches": [
+    "python"
+  ],
+  "tier": "L2",
+  "category": "python-bridge",
+  "kind": "fix",
+  "expected": {
+    "outcome": "fix"
+  },
+  "culprit": "crates/calc-eval/src/bridge.rs::EXTERNAL_FUNCS",
+  "commit_message": "refactor: tidy the list of external functions",
+  "suites": [
+    "rust"
+  ],
+  "hidden_files": [
+    "crates/calc-cli/tests/hidden_29.rs"
+  ],
+  "hidden_run": "cargo test -p calc-cli --test hidden_29"
+}

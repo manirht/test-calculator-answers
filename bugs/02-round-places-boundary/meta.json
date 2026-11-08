@@ -1,0 +1,22 @@
+{
+  "id": "02",
+  "slug": "round-places-boundary",
+  "title": "round(x, 20) is rejected even though the message says 0 to 20",
+  "lang": "rust",
+  "also_touches": [],
+  "tier": "L1",
+  "category": "builtins",
+  "kind": "fix",
+  "expected": {
+    "outcome": "fix"
+  },
+  "culprit": "crates/calc-eval/src/builtins.rs::call (\"round\" arm)",
+  "commit_message": "fix: tighten the places check in round()",
+  "suites": [
+    "rust"
+  ],
+  "hidden_files": [
+    "crates/calc-eval/tests/hidden_02.rs"
+  ],
+  "hidden_run": "cargo test -p calc-eval --test hidden_02"
+}

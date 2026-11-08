@@ -1,0 +1,24 @@
+{
+  "id": "06",
+  "slug": "ts-history-zero-count",
+  "title": ":history 0 says there is no history",
+  "lang": "ts",
+  "also_touches": [],
+  "tier": "L1",
+  "category": "repl-commands",
+  "kind": "fix",
+  "expected": {
+    "outcome": "stop",
+    "reason": "unsupported_language_or_not_reproduced",
+    "note": "TypeScript-only bug"
+  },
+  "culprit": "ts/src/commands.ts::parseCommand (history case)",
+  "commit_message": "refactor: simplify :history argument parsing",
+  "suites": [
+    "ts"
+  ],
+  "hidden_files": [
+    "ts/src/test/hidden_06.test.ts"
+  ],
+  "hidden_run": "cd ts && npm run build && node --test dist/test/hidden_06.test.js"
+}

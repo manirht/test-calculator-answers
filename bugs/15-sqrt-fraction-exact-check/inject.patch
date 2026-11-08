@@ -1,0 +1,13 @@
+diff --git a/crates/calc-eval/src/builtins.rs b/crates/calc-eval/src/builtins.rs
+index 46c698b..9afe410 100644
+--- a/crates/calc-eval/src/builtins.rs
++++ b/crates/calc-eval/src/builtins.rs
+@@ -69,7 +69,7 @@ pub fn sqrt(x: Rational) -> Result<Rational, EvalError> {
+     }
+     let (n, d) = (x.num() as u128, x.den() as u128);
+     let (rn, rd) = (isqrt(n), isqrt(d));
+-    if rn * rn == n && rd * rd == d {
++    if rn * rn == n {
+         return Rational::new(rn as i128, rd as i128);
+     }
+     const SCALE: u128 = 1_000_000_000_000;
